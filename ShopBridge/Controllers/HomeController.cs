@@ -1,4 +1,5 @@
-﻿using ShopBridge.ApiWrappers;
+﻿using Business.Entities;
+using ShopBridge.ApiWrappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,49 @@ namespace ShopBridge.Controllers
     {
         public ActionResult Index()
         {
-            var prod = ProductApiWrapper.GetAllProducts();
+            var prods = ProductApiWrapper.GetAllProducts();
+            return View(prods);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            ProductApiWrapper.DeleteProduct(id);
+            return RedirectToAction("Index");
+        }
+        
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            var prod = ProductApiWrapper.GetProduct(id);
+            return View(prod);
+        }
+        
+        [HttpPost]
+        public ActionResult Update(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                ProductApiWrapper.UpdateProduct(product);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        
+        [HttpGet]
+        public ActionResult Add()
+        {
+            var prod = new Product();
+            return View(prod);
+        }
+        
+        [HttpPost]
+        public ActionResult Add(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                ProductApiWrapper.AddProduct(product);
+                return RedirectToAction("Index");
+            }
             return View();
         }
     }

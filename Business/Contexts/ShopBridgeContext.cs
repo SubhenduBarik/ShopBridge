@@ -10,29 +10,16 @@ namespace Business.Contexts
 {
     public class ShopBridgeContext : DbContext
     {
-        public ShopBridgeContext() : base()
+        public ShopBridgeContext() : base("name=ShopBridge")
         {
-            Database.SetInitializer<ShopBridgeContext>(new CreateDatabaseIfNotExists<ShopBridgeContext>());
+            Database.SetInitializer(new CustomDBInitializer());
         }
 
         public DbSet<Product> ProductSet { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().HasKey(x => x.ProductId);
-            modelBuilder.Entity<Product>().Property(x => x.ProductId).HasColumnName("ProductId")
-                .IsRequired()
-                .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Product>().Property(x => x.Name)
-                .HasColumnName("Name")
-                .HasMaxLength(50);
-            modelBuilder.Entity<Product>().Property(x => x.Description)
-                .HasColumnName("Description")
-                .HasMaxLength(50);
-            modelBuilder.Entity<Product>().Property(x => x.Price)
-                .HasColumnName("Price");
-            modelBuilder.Entity<Product>().Property(x => x.StockCount)
-                .HasColumnName("StockCount");
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -26,12 +26,13 @@ namespace Business.Repository
             }
         }
 
-        public void AddProduct(Product product)
+        public Product AddProduct(Product product)
         {
             using (var entityContext = new ShopBridgeContext())
             {
-                entityContext.ProductSet.Add(product);
+                var addedProd = entityContext.ProductSet.Add(product);
                 entityContext.SaveChanges();
+                return addedProd;
             }
         }
 
@@ -50,13 +51,14 @@ namespace Business.Repository
             }
         }
 
-        public void RemoveProduct(int productId)
+        public Product RemoveProduct(int productId)
         {
             using (var entityContext = new ShopBridgeContext())
             {
                 var existingProduct = entityContext.ProductSet.FirstOrDefault(x => x.ProductId == productId);
-                entityContext.ProductSet.Remove(existingProduct);
+                var prod = entityContext.ProductSet.Remove(existingProduct);
                 entityContext.SaveChanges();
+                return prod;
             }
         }
     }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopBridgeApi", "ShopBridgeApi\ShopBridgeApi.csproj", "{D4D089FC-549E-4353-8743-3B7142F90746}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopBridgeTests", "ShopBridgeTests\ShopBridgeTests.csproj", "{0D3A13D3-669F-42DA-8E3C-1A8429B2B51C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D4D089FC-549E-4353-8743-3B7142F90746}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4D089FC-549E-4353-8743-3B7142F90746}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4D089FC-549E-4353-8743-3B7142F90746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D3A13D3-669F-42DA-8E3C-1A8429B2B51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3A13D3-669F-42DA-8E3C-1A8429B2B51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3A13D3-669F-42DA-8E3C-1A8429B2B51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3A13D3-669F-42DA-8E3C-1A8429B2B51C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

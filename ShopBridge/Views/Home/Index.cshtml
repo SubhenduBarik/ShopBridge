@@ -1,1 +1,35 @@
-﻿<div id="react-root"></div>
+﻿@model List<Business.Entities.Product>
+
+<div class="container-fluid pl-2">
+    <div class="row m-0">
+        @Html.ActionLink("Add", "Add", null, new { @class = "btn btn-outline-primary ml-2" })
+    </div>
+    <div class="row m-0 gap-15">
+        @foreach (Business.Entities.Product prod in Model)
+        {
+            <div class="card m-2 pt-3 pl-3 pr-3 pb-1 boxShadow" style="width: 20rem;">
+                <img class="card-img-top" src="~/Content/images/sample-cookie.png"
+                     alt="sample cookie image">
+                <div class="card-body pt-3 pl-2 pr-2">
+                    <h5 class="card-title">
+                        @prod.Name
+                        <span class="font-italic"> ~ Price: &#8377 @prod.Price</span>
+                    </h5>
+                    <p class="card-text"> @prod.Description</p>
+                    @if (prod.StockCount > 0)
+                    {
+                        <p class="card-text"> In Inventory ~ @prod.StockCount</p>
+                    }
+                    else
+                    {
+                        <p class="card-text"> Out Of Stock</p>
+                    }
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    @Html.ActionLink("Update", "Update", new { id = prod.ProductId }, new { @class = "btn btn-outline-info" })
+                    @Html.ActionLink("Delete", "Delete", new { id = prod.ProductId }, new { @class = "btn btn-outline-danger" })
+                </div>
+            </div>
+        }
+    </div>
+</div>

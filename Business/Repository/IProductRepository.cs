@@ -9,14 +9,14 @@ namespace Business.Repository
 {
     public interface IProductRepository
     {
-         List<Product> GetAllProducts();
+        List<Product> GetAllProducts();
 
-         Product GetProduct(int productId);
+        Product GetProduct(int productId);
 
-         void AddProduct(Product product);
+        Product AddProduct(Product product);
 
-         void UpdateProduct(Product product);
+        void UpdateProduct(Product product);
 
-         void RemoveProduct(int productId);
+        Product RemoveProduct(int productId);
     }
 }

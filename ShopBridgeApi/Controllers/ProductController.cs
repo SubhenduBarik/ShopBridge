@@ -19,9 +19,9 @@ namespace ShopBridgeApi.Controllers
         }
 
         [HttpPost]
-        public void AddProduct(Product product)
+        public Product AddProduct(Product product)
         {
-            _productServices.AddProduct(product);
+            return _productServices.AddProduct(product);
         }
 
         [HttpGet]
@@ -37,9 +37,9 @@ namespace ShopBridgeApi.Controllers
         }
 
         [HttpGet]
-        public void RemoveProduct(int productId)
+        public Product RemoveProduct(int productId)
         {
-            _productServices.RemoveProduct(productId);
+            return _productServices.RemoveProduct(productId);
         }
 
         [HttpPost]

@@ -1,12 +1,21 @@
-﻿body {
-    padding-top: 50px;
+﻿:root {
+    --grape: #9461BE;
+    --eggplant: #49274A;
+    --sand: #F4DECB;
+}
+
+body {
+    padding-top: 20px;
     padding-bottom: 20px;
+    background-color: var(--grape);
+    color: var(--sand);
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    height: calc(100% - 10px);
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -20,5 +29,62 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 400px;
 }
+
+.card {
+    background-color: var(--grape);
+    border-color: var(--eggplant);
+}
+
+.card-footer {
+    background-color: transparent;
+    border-color: var(--eggplant);
+}
+
+.btn-outline-info {
+    color: #4ed1e6;
+    border-color: #4fc9dc;
+}
+
+.btn-outline-danger {
+    color: #a21d1d;
+    border-color: #860915e8;
+}
+
+.boxShadow {
+    box-shadow: 8px 7px 11px 0px var(--eggplant);
+}
+
+.gap-15 {
+    gap: 15px;
+}
+
+.btn {
+    border: 2px solid;
+}
+
+.btn-outline-primary {
+    color: var(--eggplant);
+    border-color: var(--eggplant);
+}
+
+    .btn-outline-primary:hover {
+        color: var(--sand);
+        background-color: var(--eggplant);
+        border-color: var(--eggplant);
+    }
+
+.text-danger {
+    color: #ff8888 !important;
+}
+
+.btn-outline-secondary {
+    color: #c49bd2;
+    border-color: #c49bd2 !important;
+}
+
+    .btn-outline-secondary:hover {
+        color: var(--eggplant);
+        background-color: #c49bd2;
+    }

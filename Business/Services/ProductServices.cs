@@ -17,9 +17,9 @@ namespace Business.Services
             _productRepo = new Business.Repository.ProductRepository();
         }
 
-        public void AddProduct(Product product)
+        public Product AddProduct(Product product)
         {
-            _productRepo.AddProduct(product);
+            return _productRepo.AddProduct(product);
         }
 
         public List<Product> GetAllProducts()
@@ -32,9 +32,9 @@ namespace Business.Services
             return _productRepo.GetProduct(productId);
         }
 
-        public void RemoveProduct(int productId)
+        public Product RemoveProduct(int productId)
         {
-            _productRepo.RemoveProduct(productId);
+            return _productRepo.RemoveProduct(productId);
         }
 
         public void UpdateProduct(Product product)

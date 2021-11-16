@@ -13,10 +13,10 @@ namespace Business.Services
 
         Product GetProduct(int productId);
 
-        void AddProduct(Product product);
+        Product AddProduct(Product product);
 
         void UpdateProduct(Product product);
 
-        void RemoveProduct(int productId);
+        Product RemoveProduct(int productId);
     }
 }
